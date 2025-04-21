@@ -2,7 +2,6 @@ name: Build, Push, Ssh, Pull, Down, Up
 
 on: [push]
 
-
 jobs:
   build-and-push:
     name: Build
@@ -14,7 +13,7 @@ jobs:
         with:
           node-version: 18
       - run: npm install -D esbuild
-      - run: npm run build        
+      - run: npm run build
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
@@ -30,8 +29,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: lamdb/ci-cd:staging2
-
+          tags: nguyenson204/ci-cd:staging2
 
   pull-and-up:
     name: Pull new image and re run with the new version
