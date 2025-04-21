@@ -29,7 +29,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: nguyenson204/ci-cd:staging2
+          tags: nguyenson204
 
   pull-and-up:
     name: Pull new image and re run with the new version
